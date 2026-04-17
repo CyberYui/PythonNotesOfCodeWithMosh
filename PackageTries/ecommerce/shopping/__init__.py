@@ -1,0 +1,1 @@
+"""shopping sub-package."""
