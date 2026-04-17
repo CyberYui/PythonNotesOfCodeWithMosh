@@ -8,6 +8,7 @@
 # from ModuleSales import *
 
 # 尽量引用特定的方法，或者直接使用import来引用一个模块对象，这样也可以引入整个模块的内容，只是需要通过模块对象调用
+
 # 原始示例代码（模块文件命名为 ModuleSales.py 时）：
 # from ModuleSales import calc_tax, calc_shipping
 # import ModuleSales
@@ -17,12 +18,18 @@
 # ModuleSales.calculate_total_sales()
 
 # 由于模块文件已重命名为 28_ModuleSales.py（以数字开头，不是合法的 Python 模块名），
-# 这里使用 importlib 来动态加载该模块文件进行演示：
+# 这里使用 importlib 来动态加载该模块文件进行演示
+# importlib 是 Python 的一个标准库模块，提供了用于动态加载模块的功能
+# 我们可以使用它来加载任何指定路径的 Python 文件作为模块
 import importlib.util
+
+# os 模块提供了与操作系统进行交互的功能，这里我们用它来构建模块文件的路径
 import os
 
+# 构建模块文件的路径，并使用 importlib 来加载模块文件
 module_path = os.path.join(os.path.dirname(__file__), "28_ModuleSales.py")
 spec = importlib.util.spec_from_file_location("ModuleSales", module_path)
+# 创建模块对象并执行模块代码
 ModuleSales = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ModuleSales)
 
