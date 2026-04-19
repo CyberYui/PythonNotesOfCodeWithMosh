@@ -29,7 +29,7 @@ tax()
 from ecommerce.shopping.sales import calc_package_shipping
 
 # relative path import (works only within the package)
-from ..ecommerce.shopping.sales import clac_package_shipping
+# from ..ecommerce.shopping.sales import clac_package_shipping
 
 calc_package_shipping()
 
@@ -41,3 +41,9 @@ calc_shipping_and_notify()
 # 6) Inspect package/module attributes with dir()
 print(dir(ecommerce))
 print(dir(ecommerce.sales))
+from ecommerce.shopping import sales
+
+# There are many magic methods that we can try to use
+print(sales.__name__)  # It'll print the name of the module
+print(sales.__file__)  # It'll print the path to the file where the module is defined
+print(sales.__package__)  # It'll print the name of the package that contains the module
