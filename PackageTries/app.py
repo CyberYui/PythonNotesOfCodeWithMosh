@@ -25,7 +25,11 @@ from ecommerce.sales import calc_tax as tax
 tax()
 
 # 4) Import from a sub-package module
+# absolute path import
 from ecommerce.shopping.sales import calc_package_shipping
+
+# relative path import (works only within the package)
+from ..ecommerce.shopping.sales import clac_package_shipping
 
 calc_package_shipping()
 
