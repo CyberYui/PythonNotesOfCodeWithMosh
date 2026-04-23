@@ -10,3 +10,14 @@ print(
 
 print(mystr.capitalize())  # 将字符串的第一个字符转换为大写，其他字符转换为小写
 print(mystr.strip())  # 删除字符串两端的空格
+
+mystr = "CyberIsPracticingProgrammingBasicLanguage"
+print(mystr[0])
+print(mystr[-1])
+print(mystr[0:5])
+print(mystr[0:])  # same as mystr
+print(mystr[2:11])
+
+newstr = mystr.upper()  # 将字符串转换为大写
+print(newstr)  # 输出转换后的字符串
+print(mystr)  # 输出原字符串，说明原字符串是不变的
