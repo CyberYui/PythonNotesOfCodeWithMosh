@@ -240,3 +240,25 @@ secondarray = array("i", [item for item in range(20) if item % 2 == 1])
 print(secondarray)  # 输出一个数组，包含 0 到 19 中的奇数
 newarray = sorted(firstarray)
 print(newarray)  # 输出一个列表，包含 firstarray 中的元素，按照升序排序
+
+firstset = [5, 3, 2, 4, 1, 6, 8, 7, 9, 0]
+firstset = set(firstset)
+print(firstset)  # 输出一个集合，包含 firstset 中的元素
+secondset = set([item for item in range(20) if item % 2 == 0])
+print(secondset)  # 输出一个集合，包含 0 到 19 中的偶数
+thirdset = firstset | secondset
+print(thirdset)  # 输出firstset 和 secondset 的并集
+thirdset = firstset.union(secondset)
+print(thirdset)  # 输出firstset 和 secondset 的并集
+thirdset = firstset & secondset
+print(thirdset)  # 输出firstset 和 secondset 的交集
+thirdset = firstset.intersection(secondset)
+print(thirdset)  # 输出firstset 和 secondset 的交集
+thirdset = firstset - secondset
+print(thirdset)  # 输出firstset 和 secondset 的差集
+thirdset = firstset.difference(secondset)
+print(thirdset)  # 输出firstset 和 secondset 的差集
+thirdset = firstset ^ secondset
+print(thirdset)  # 输出firstset 和 secondset 的对称差集
+thirdset = firstset.symmetric_difference(secondset)
+print(thirdset)  # 输出firstset 和 secondset 的对称差集
