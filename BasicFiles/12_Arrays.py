@@ -16,3 +16,7 @@ print(numbers)
 # numbers[0] = 1.1 # 会报TypeError的错误
 numbers.insert(3, 5)  # 在索引为3的数前面插入5
 print(numbers)
+numbers.remove(2)  # 删除第一个值为2的元素
+print(numbers)
+print(numbers.index(4))  # 输出4在数组中的索引
+print(numbers.count(5))  # 输出数组中值为5的元素的数量

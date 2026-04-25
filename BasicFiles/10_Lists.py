@@ -163,12 +163,17 @@ print(numbers)  # 输出[48, 39, 32, 26, 23, 17, 14, 12, 10, 5]
 # 如果想要不修改列表，甚至对字符串进行排序，就需要使用sorted函数
 letters = ["e", "a", "b", "d", "c"]
 numbers = [12, 23, 32, 14, 5, 26, 17, 48, 39, 10]
-letters = sorted(letters)  # 实际上这行代码没有任何效果
-print(f"The sorted letters is {sorted(letters)}")
-numbers = sorted(numbers)  # 实际上这行代码没有任何效果
-print(f"The sorted numbers is {numbers}")
+letters = sorted(
+    letters
+)  # sorted函数会返回一个新的列表，而不会修改原来的列表，这里我们用原列表捕获了这个新的列表
 print(letters)  # 输出['a', 'b', 'c', 'd', 'e']
-print(numbers)  # 输出[5, 10, 12, 14, 17, 23, 26, 32, 39, 48]
+print(f"The sorted letters is {sorted(letters)}")
+newnumbers = sorted(numbers)  # 用新变量捕获了排序后的列表，原列表不变
+print(f"The sorted numbers is {newnumbers}")
+print(letters)  # 输出['a', 'b', 'c', 'd', 'e']
+print(
+    numbers
+)  # 输出[12, 23, 32, 14, 5, 26, 17, 48, 39, 10]，可以看到原列表并没有被修改
 # sorted函数会返回一个新的列表，而不会修改原来的列表
 # 和sort函数一样，你也可以使用reverse参数倒序排序
 # sorted(可迭代对象Iterable, key=排序依据, reverse=是否倒序)
