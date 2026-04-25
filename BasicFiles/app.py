@@ -170,3 +170,73 @@ wholelist = [1, 2, 3, 4, 5, "a", "b", "c", 0, "k"]
 print(wholelist.index("k"))
 del wholelist[9]
 print(wholelist)  # 输出删除元素后的列表
+
+firstnumbers = [48, 39, 32, 14, 5, 26, 17, 23, 10, 12]
+secondnumbers = [7, 3, 5, 6, 4, 1, 2, 3, 8, 9, 4, 32, 5, 6, 7, 10, 11, 12, 13, 14]
+firstnumbers.sort(reverse=True)  # 对列表进行降序排序
+firstnumbers.sort()  # 对列表进行升序排序
+sortsecondnumbers = sorted(
+    secondnumbers, reverse=True
+)  # 对列表进行降序排序，并返回一个新的列表给sortsecondnumbers变量
+sortsecondnumbers = sorted(sortsecondnumbers)  # 对排序后的列表进行升序排序
+
+x = 1
+# key=lambda 参数: 你要拿来排序/判断/计算的东西
+y = lambda x: x * 2
+print(y(x))
+
+x = [5, 4, 3, 2, 1]
+# x = sorted(x, key=lambda x: x)
+y = ["a", "b", "c", "d", "e"]
+z = tuple(zip(x, y))
+k = sorted(z, key=lambda x: x[0], reverse=False)
+newdict = {index: value for index, value in k}
+# newdict = sorted(newdict.items(), key=lambda item: item[0])
+print(newdict)
+
+firstlist = sorted(newdict, reverse=True)
+print(firstlist)
+secondlist = sorted(newdict.values(), reverse=True)
+print(secondlist)
+
+numbers = [2, 3, 4, 1]
+names = ["Tom", "Jerry", "Mickey", "Donald"]
+numbers.sort()  # 对列表进行排序
+newdict1 = zip(names, numbers)  # 将两个列表打包成一个可迭代对象
+newdict1 = tuple(
+    newdict1
+)  # 将可迭代对象转换成一个元组，结果是一个包含元组的列表，每个元组包含一个名字和一个数字
+newdict1 = sorted(newdict1, key=lambda x: x[1], reverse=True)
+print(newdict1)  # 输出排序后的列表，按照数字从大到小排序
+newdict1 = dict(zip(names, numbers))  # 将两个列表打包成一个字典，名字作为键，数字作为值
+newdict1 = dict(sorted(newdict1.items(), key=lambda item: item[1], reverse=True))
+print("newdict1:", newdict1)  # 输出排序后的列表，按照数字从大到小排序
+
+firstlist = list(map(lambda x: x[0], newdict1.items()))
+secondlist = list(map(lambda x: x[1], newdict1.items()))
+print(firstlist)
+print(secondlist)
+newdict2 = dict(zip(firstlist, secondlist))
+if newdict1 == newdict2:
+    print("newdict1 and newdict2 are the same")
+
+print(newdict1.keys())  # 输出字典的键，结果是一个 dict_keys 对象
+thirdlist = list(map(lambda x: x, newdict1.keys()))
+fourthlist = list(map(lambda x: x, newdict1.values()))
+print(thirdlist)
+print(fourthlist)
+
+truelist = [item for item in range(20) if item % 2 == 0]
+print(truelist)  # 输出一个列表，包含 0 到 19 中的偶数
+truedict = {item: item**2 for item in range(20) if item % 2 == 0}
+print(truedict)  # 输出一个字典，键是 0 到 19 中的偶数，值是键的平方
+
+from array import array
+
+firstarray = array("i", [1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+print(type(firstarray))  # 输出 firstarray 的类型，结果是一个数组
+print(firstarray)  # 输出 firstarray 的内容，结果是一个数组对象，包含整数 1 到 9 和 0
+secondarray = array("i", [item for item in range(20) if item % 2 == 1])
+print(secondarray)  # 输出一个数组，包含 0 到 19 中的奇数
+newarray = sorted(firstarray)
+print(newarray)  # 输出一个列表，包含 firstarray 中的元素，按照升序排序
