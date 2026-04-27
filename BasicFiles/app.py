@@ -1,264 +1,330 @@
-mystr = "    Hello, World!    "
-print("mystr:", mystr)  # 输出原字符串，包含两端的空格
-print("mystr.find('World'):", mystr.find("World"))  # 输出 "World" 在字符串中的索引
-print("type(mystr):", type(mystr))  # 输出字符串的类型
-newstr = mystr.format()  # 字符串的 format 方法，返回一个新的字符串
-print("newstr:", newstr)  # 输出使用 format 方法返回的新字符串
-print(
-    "mystr == newstr:", mystr == newstr
-)  # 输出比较结果，说明 mystr 和 newstr 是相同的字符串对象
+# ==============================================
+# 第1章 字符串常用操作
+# 核心：字符串是不可变类型，所有方法都返回新字符串
+# ==============================================
+sample_str = "    Hello, World!    "
 
-print(mystr.capitalize())  # 将字符串的第一个字符转换为大写，其他字符转换为小写
-print(mystr.strip())  # 删除字符串两端的空格
+# 基础查询
+print("原字符串:", sample_str)
+print("查找'World'的索引:", sample_str.find("World"))
+print("变量类型:", type(sample_str))
 
-mystr = "CyberIsPracticingProgrammingBasicLanguage"
-print(mystr[0])
-print(mystr[-1])
-print(mystr[0:5])
-print(mystr[0:])  # same as mystr
-print(mystr[2:11])
+# 常用格式化/清理方法
+print("首字母大写:", sample_str.capitalize())
+print("去除两端空格:", sample_str.strip())
 
-newstr = mystr.upper()  # 将字符串转换为大写
-print(newstr)  # 输出转换后的字符串
-print(mystr)  # 输出原字符串，说明原字符串是不变的
+# 索引与切片
+text_str = "CyberIsPracticingProgrammingBasicLanguage"
+print("第一个字符:", text_str[0])
+print("最后一个字符:", text_str[-1])
+print("切片 0~5, 左闭右开:", text_str[0:5])
+print("从2到11, 左闭右开:", text_str[2:11])
+print("取全部:", text_str[0:])
 
-mystr = "Hello"
-newstr = "World"
-print(mystr + " " + newstr)  # 输出连接后的字符串
-print(f"{mystr} {newstr}")  # 使用 f-string 格式化字符串
-print(f"{len(mystr)} {2 + 2}")  # 在 f-string 中使用表达式
-print(mystr.replace("l", "k"))
-print(mystr)  # 输出原字符串，说明原字符串是不变的
+# 大小写转换
+upper_str = text_str.upper()
+print("转大写:", upper_str)
+print("原字符串不变:", text_str)
 
-x = 10
-y = 20
-z = 1.1
-print(type(x))  # 输出 x 的类型
-print(type(z))  # 输出 z 的类型
-m = x + 1j
-print(m)  # 输出 m 的值
-print(m.real)  # 输出 m 的实部
-print(m.imag)  # 输出 m 的虚部
-print(type(m))  # 输出 m 的类型
-print(10 // 3)  # 输出整数的地板除结果，结果是一个整数
-print(10 % 3)  # 输出整数的模运算结果，结果是一个整数
-print(2**3)
+# 字符串拼接与替换
+str1 = "Hello"
+str2 = "World"
+print("拼接:", str1 + " " + str2)
+print(f"f-string格式化: {str1} {str2}")
+print(f"f-string表达式: {len(str1)} {2+2}")
 
-round(2.5)  # 输出 2.5 四舍五入后的结果，结果是一个整数
-print(round(2.5))  # 输出 2.5 四舍五入后的结果，结果是一个整数
-print(round(2.55, 1))  # 输出 2.55 四舍五入到小数点后一位的结果，结果是一个浮点数
-print(abs(-5))  # 输出 -5 的绝对值，结果是一个整数
+# replace 生成新字符串
+replaced_str = str1.replace("l", "k")
+print("替换后:", replaced_str)
+print("原字符串不变:", str1)
 
-import math  # 导入 math 模块，提供数学函数和常量
+# ==============================================
+# 第2章 数字类型与运算
+# 核心：整数、浮点数、复数、数学运算、math模块
+# ==============================================
+int_num = 10
+float_num = 1.1
+print("int类型:", type(int_num))
+print("float类型:", type(float_num))
 
-print(math.sqrt(16))  # 输出 16 的平方根，结果是一个浮点数
-print(math.ceil(2.3))  # 输出 2.3 向上取整后的结果，结果是一个整数
-print(math.floor(2.7))  # 输出 2.7 向下取整后的结果，结果是一个整数
+# 复数
+complex_num = 10 + 1j
+print("复数:", complex_num)
+print("实部:", complex_num.real)
+print("虚部:", complex_num.imag)
+print("复数类型:", type(complex_num))
 
-print(bool(set()))  # 输出一个空集合的布尔值，结果是 False
-print(bool({}))  # 输出一个空字典的布尔值，结果是 False
-print(bool([]))  # 输出一个空列表的布尔值，结果是 False
-print(bool(()))  # 输出一个空元组的布尔值，结果是 False
-print(bool(""))  # 输出一个空字符串的布尔值，结果是 False
-print(bool(0))  # 输出整数 0 的布尔值，结果是 False
-print(bool(0.0))  # 输出浮点数 0.0 的布尔值，结果是 False
-print(bool(None))  # 输出 None 的布尔值，结果是 False
-print(bool(False))  # 输出 False 的布尔值，结果是 False
-print(bool(True))  # 输出 True 的布尔值，结果是 True
-print(bool(1))  # 输出整数 1 的布尔值，结果是 True
+# 基础运算
+print("地板除 10//3, 只保留整数部分:", 10 // 3)
+print("取模 10%3, 只保留余数:", 10 % 3)
+print("幂运算 2**3, 2的3次方:", 2**3)
 
-age = 10  # 获取用户输入的年龄，返回一个字符串
-print("Falsy values" if int(age) >= 10 else "Truthy values")
+# 常用数学函数
+print("四舍五入 round(2.6):", round(2.6))
+# 如果是2.5四舍五入结果会是2
+# 因为Python的round函数采用的是银行家舍入法（Banker's Rounding）当遇到.5时会向最近的偶数舍入
+print("保留1位 round(2.55,1):", round(2.55, 1))
+print("绝对值 abs(-5):", abs(-5))
 
-x = 0b10
-x = 0x12C
-y = 0b10 + 0x12C
-print(y)
+# math 模块
+import math
 
-if age >= 5:
-    print(f"Age is more than or equal to 5")
-elif age >= 10:
-    print(f"Age is more than or equal to 10")
+print("平方根 sqrt(16):", math.sqrt(16))
+print("向上取整 ceil(2.3):", math.ceil(2.3))
+print("向下取整 floor(2.7):", math.floor(2.7))
+
+# ==============================================
+# 第3章 布尔值与真假判断
+# 核心：空值、0、空容器 都是 False，其他为 True
+# ==============================================
+print("空集合 bool(set()) →", bool(set()))
+print("空字典 bool({}) →", bool({}))
+print("空列表 bool([]) →", bool([]))
+print("空元组 bool(()) →", bool(()))
+print("空字符串 bool('') →", bool(""))
+print("0 bool(0) →", bool(0))
+print("0.0 bool(0.0) →", bool(0.0))
+print("None →", bool(None))
+print("False →", bool(False))
+print("True →", bool(True))
+
+# 三元表达式
+age = 10
+print("左真右假: Truthy" if age >= 10 else "Falsy")
+
+# 进制
+bin_num = 0b10
+print("二进制 0b10 →", bin_num)
+hex_num = 0x12C
+print("十六进制 0x12C →", hex_num)
+print("二进制+十六进制结果:", bin_num + hex_num)
+
+# ==============================================
+# 第4章 流程控制：if / while / for
+# 核心：控制程序执行顺序，是所有逻辑的基础
+# ==============================================
+# if 判断
+if age >= 10:
+    print("年龄大于等于10")
+elif age >= 5:
+    print("年龄大于等于5但是小于10")
 else:
-    print(f"Age is less than 5")
+    print("年龄小于5")
 
-# for x in "Helloworld":
-#     print(x)
-
-# for i in range(0, 5):
-#     print(i)
-
-# for i in range(0, 50, 2):
-#     if i == 0:
-#         continue
-#     print(i)
-
-animals = [
-    "cat",
-    "dog",
-    "rabbit",
-    "hamster",
-    "parrot",
-    "fish",
-    "turtle",
-    "snake",
-    "lizard",
-    "frog",
-]
-# for animal in animals:
-#     if animal.startswith("s"):
-#         print(f"Found {animal}!")
-#         break
-# else:
-#     print("Not Found!")
-
-a = 1
-b = 5
+# while 循环
+a, b = 1, 5
 while a < b:
-    print(f"Now a is: {a}")
+    print(f"当前 a = {a}")
     a += 1
     if a == 3:
-        print("a is now 3, breaking the loop")
+        print("a=3，退出循环")
         break
 
+# 变量交换（Python特色）
 a, b = b, a
-print(f"Now a is: {a}, and b is: {b}")
+print(f"交换后 a={a}, b={b}")
 
-firstlist = [1, 2, 3]
-secondlist = ["a"] * 3
-thirdlist = "Hello"
-wholelist = firstlist + secondlist + list(thirdlist)
-print(wholelist)  # 输出连接后的列表
-# for i in wholelist:
-#     print(i)
-print(wholelist[::-1])
-first, second, third, *other = wholelist
-print(first)  # 输出列表的第一个元素
-print(second)  # 输出列表的第二个元素
-print(third)  # 输出列表的第三个元素
-print(other)  # 输出列表中剩余的元素，结果是一个列表
-print(wholelist)
-first, *other, third, last = wholelist
-print(first)  # 输出列表的第一个元素
-print(other)  # 输出列表中剩余的元素，结果是一个列表
-print(third)  # 输出列表的倒数第二个元素
-print(last)  # 输出列表的最后一个元素
+# ==============================================
+# 第5章 列表 list
+# 核心：有序、可变、可重复，最常用容器
+# ==============================================
+list1 = [1, 2, 3]
+list2 = ["a"] * 3
+str_list = list("Hello")
+combined_list = list1 + list2 + str_list
 
-firstenumerate = enumerate(wholelist)
-newdict = {}
-for index, truevalue in firstenumerate:
-    newdict[index] = truevalue
+print("合并列表:", combined_list)
+print("列表反转:", combined_list[::-1])
 
-print(newdict)  # 输出一个字典，键是列表元素的索引，值是列表元素的值
+# 解包
+# *other 是一个特殊的语法，表示将剩余的元素放在一个叫other的列表中
+first, second, third, *other = combined_list
+print(
+    "解包前3个+剩余:",
+    "first=",
+    first,
+    "second=",
+    second,
+    "third=",
+    third,
+    "other=",
+    other,
+)
 
-wholelist = []
-wholelist.append(1)
-wholelist.append(2)
-wholelist.append(3)
-print(wholelist)  # 输出添加元素后的列表
-wholelist.insert(0, "a")
-wholelist.insert(2, "b")
-wholelist.insert(5, "c")
-print(wholelist)  # 输出插入元素后的列表
-wholelist.pop()
-print(wholelist)  # 输出删除元素后的列表
-wholelist.remove("a")
-wholelist.remove(2)
-print(wholelist)  # 输出移除元素后的列表
+first, *other, third, last = combined_list
+print(
+    "头尾+中间剩余:", "first=", first, "other=", other, "third=", third, "last=", last
+)
 
-wholelist = [1, 2, 3, 4, 5, "a", "b", "c", 0, "k"]
-print(wholelist.index("k"))
-del wholelist[9]
-print(wholelist)  # 输出删除元素后的列表
+# 增删改查
+test_list = []
+# append是在列表末尾添加一个元素
+test_list.append(1)
+test_list.append(2)
+test_list.append(3)
+# insert是在指定索引位置插入一个元素
+test_list.insert(0, "a")
+test_list.insert(2, "b")
+print("增/插后:", test_list)
 
-firstnumbers = [48, 39, 32, 14, 5, 26, 17, 23, 10, 12]
-secondnumbers = [7, 3, 5, 6, 4, 1, 2, 3, 8, 9, 4, 32, 5, 6, 7, 10, 11, 12, 13, 14]
-firstnumbers.sort(reverse=True)  # 对列表进行降序排序
-firstnumbers.sort()  # 对列表进行升序排序
-sortsecondnumbers = sorted(
-    secondnumbers, reverse=True
-)  # 对列表进行降序排序，并返回一个新的列表给sortsecondnumbers变量
-sortsecondnumbers = sorted(sortsecondnumbers)  # 对排序后的列表进行升序排序
+# pop是根据索引删除元素，默认删除最后一个元素
+test_list.pop(-1)
+# remove是根据值删除元素，如果有重复值只会删除第一个匹配到的元素
+test_list.remove("a")
+print("删后:", test_list)
 
-x = 1
-# key=lambda 参数: 你要拿来排序/判断/计算的东西
-y = lambda x: x * 2
-print(y(x))
+# 索引删除
+num_list = [1, 2, 3, 4, 5, "a", "b", "c", 0, "k"]
+print("'k'的索引:", num_list.index("k"))
+# del是根据索引删除元素，和pop不同的是del不会返回被删除的元素
+del num_list[9]
+print("del删除后:", num_list)
 
-x = [5, 4, 3, 2, 1]
-# x = sorted(x, key=lambda x: x)
-y = ["a", "b", "c", "d", "e"]
-z = tuple(zip(x, y))
-k = sorted(z, key=lambda x: x[0], reverse=False)
-newdict = {index: value for index, value in k}
-# newdict = sorted(newdict.items(), key=lambda item: item[0])
-print(newdict)
+# 排序
+numbers1 = [48, 39, 32, 14, 5]
+# 原地排序, 直接改变原列表
+numbers1.sort()
+print("原地升序:", numbers1)
+# 原地降序, reverse=True参数会让sort方法按照降序排序
+numbers1.sort(reverse=True)
+print("原地降序:", numbers1)
 
-firstlist = sorted(newdict, reverse=True)
-print(firstlist)
-secondlist = sorted(newdict.values(), reverse=True)
-print(secondlist)
+numbers2 = [7, 3, 5, 6]
+# sorted函数会返回一个新的列表，原列表不变
+sorted_num = sorted(numbers2, reverse=True)
+print("新列表sorted_num是原列表降序:", sorted_num)
+print("原列表numbers2不变:", numbers2)
 
-numbers = [2, 3, 4, 1]
-names = ["Tom", "Jerry", "Mickey", "Donald"]
-numbers.sort()  # 对列表进行排序
-newdict1 = zip(names, numbers)  # 将两个列表打包成一个可迭代对象
-newdict1 = tuple(
-    newdict1
-)  # 将可迭代对象转换成一个元组，结果是一个包含元组的列表，每个元组包含一个名字和一个数字
-newdict1 = sorted(newdict1, key=lambda x: x[1], reverse=True)
-print(newdict1)  # 输出排序后的列表，按照数字从大到小排序
-newdict1 = dict(zip(names, numbers))  # 将两个列表打包成一个字典，名字作为键，数字作为值
-newdict1 = dict(sorted(newdict1.items(), key=lambda item: item[1], reverse=True))
-print("newdict1:", newdict1)  # 输出排序后的列表，按照数字从大到小排序
+# ==============================================
+# 第6章 lambda / zip / enumerate / map
+# 核心：简化代码、快速组合/遍历数据
+# ==============================================
+# lambda 简易函数
+double = lambda x: x * 2  # 一行代码定义一个函数，参数是x，返回值是x的两倍
+print("lambda 计算 1*2:", double(1))
 
-firstlist = list(map(lambda x: x[0], newdict1.items()))
-secondlist = list(map(lambda x: x[1], newdict1.items()))
-print(firstlist)
-print(secondlist)
-newdict2 = dict(zip(firstlist, secondlist))
-if newdict1 == newdict2:
-    print("newdict1 and newdict2 are the same")
+# zip 打包
+num_zip = [5, 4, 3, 2, 1]
+char_zip = ["a", "b", "c", "d", "e"]
+# 将两个列表按照索引位置一一对应打包成一个元组
+zip_result = tuple(zip(num_zip, char_zip))
+print("zip打包:", zip_result)
+# 将元组转换为字典
+zip_dict = dict(zip_result)
+print("zip转字典:", zip_dict)
 
-print(newdict1.keys())  # 输出字典的键，结果是一个 dict_keys 对象
-thirdlist = list(map(lambda x: x, newdict1.keys()))
-fourthlist = list(map(lambda x: x, newdict1.values()))
-print(thirdlist)
-print(fourthlist)
+# 排序+字典推导
+sorted_zip = sorted(zip_result, key=lambda x: x[0])
+dict_from_zip = {k: v for k, v in sorted_zip}
+print("排序后字典:", dict_from_zip)
 
-truelist = [item for item in range(20) if item % 2 == 0]
-print(truelist)  # 输出一个列表，包含 0 到 19 中的偶数
-truedict = {item: item**2 for item in range(20) if item % 2 == 0}
-print(truedict)  # 输出一个字典，键是 0 到 19 中的偶数，值是键的平方
+# enumerate 索引+值
+enum_list = [10, 20, 30]
+enum_dict = {}
+for idx, val in enumerate(enum_list):
+    enum_dict[idx] = val
+print("enumerate转字典:", enum_dict)
 
+# map 映射
+name_list = ["Tom", "Jerry"]
+name_len = list(map(len, name_list))
+print("map计算长度:", name_len)
+
+# ==============================================
+# 第7章 字典 dict
+# 核心：键值对，查找极快，无序（3.7+有序）
+# ==============================================
+# 两种创建方式
+user_dict1 = {"Tom": 10, "Jerry": 8}
+user_dict2 = dict(Mickey=12, Donald=9)
+
+# 合并
+user_dict1.update(user_dict2)
+print("合并字典:", user_dict1)
+
+# 增/查
+user_dict1["Jacky"] = 15
+print("Jacky的成绩:", user_dict1["Jacky"])
+print("Jacky的成绩（get）:", user_dict1.get("Jacky"))
+
+# 键/值/项
+print("所有键:", list(user_dict1.keys()))
+print("所有值:", list(user_dict1.values()))
+print("所有键值对:", list(user_dict1.items()))
+
+# 按值排序
+sorted_dict = dict(sorted(user_dict1.items(), key=lambda x: x[1], reverse=True))
+print("按值降序:", sorted_dict)
+
+# 清空
+user_dict2.clear()
+
+# ==============================================
+# 第8章 推导式（列表/字典）
+# 核心：极简创建容器，Python 最优雅语法之一
+# ==============================================
+# 列表推导式
+even_list = [i for i in range(20) if i % 2 == 0]
+print("偶数列表:", even_list)
+
+# 字典推导式
+square_dict = {i: i**2 for i in range(20) if i % 2 == 0}
+print("偶数平方字典:", square_dict)
+
+# ==============================================
+# 第9章 数组 array（了解）
+# ==============================================
 from array import array
 
-firstarray = array("i", [1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
-print(type(firstarray))  # 输出 firstarray 的类型，结果是一个数组
-print(firstarray)  # 输出 firstarray 的内容，结果是一个数组对象，包含整数 1 到 9 和 0
-secondarray = array("i", [item for item in range(20) if item % 2 == 1])
-print(secondarray)  # 输出一个数组，包含 0 到 19 中的奇数
-newarray = sorted(firstarray)
-print(newarray)  # 输出一个列表，包含 firstarray 中的元素，按照升序排序
+int_array = array("i", [1, 2, 3, 4, 5])
+print("数组类型:", type(int_array))
+print("数组内容:", int_array)
 
-firstset = [5, 3, 2, 4, 1, 6, 8, 7, 9, 0]
-firstset = set(firstset)
-print(firstset)  # 输出一个集合，包含 firstset 中的元素
-secondset = set([item for item in range(20) if item % 2 == 0])
-print(secondset)  # 输出一个集合，包含 0 到 19 中的偶数
-thirdset = firstset | secondset
-print(thirdset)  # 输出firstset 和 secondset 的并集
-thirdset = firstset.union(secondset)
-print(thirdset)  # 输出firstset 和 secondset 的并集
-thirdset = firstset & secondset
-print(thirdset)  # 输出firstset 和 secondset 的交集
-thirdset = firstset.intersection(secondset)
-print(thirdset)  # 输出firstset 和 secondset 的交集
-thirdset = firstset - secondset
-print(thirdset)  # 输出firstset 和 secondset 的差集
-thirdset = firstset.difference(secondset)
-print(thirdset)  # 输出firstset 和 secondset 的差集
-thirdset = firstset ^ secondset
-print(thirdset)  # 输出firstset 和 secondset 的对称差集
-thirdset = firstset.symmetric_difference(secondset)
-print(thirdset)  # 输出firstset 和 secondset 的对称差集
+# ==============================================
+# 第10章 集合 set
+# 核心：无序、不重复，用于去重/交并差
+# ==============================================
+set1 = set([5, 3, 2, 4, 1])
+set2 = {i for i in range(20) if i % 2 == 0}
+
+print("并集 |:", set1 | set2)
+print("交集 &:", set1 & set2)
+print("差集 -:", set1 - set2)
+print("对称差集 ^:", set1 ^ set2)
+
+# ==============================================
+# ================= 核心总结 ==================
+# ==============================================
+"""
+📌 最重要知识点 + 记忆方法（必看）
+1. 字符串
+不可变：所有方法都返回新字符串
+常用：strip() upper() replace() find()
+记忆：字符串不改自己，只生儿子
+2. 数字运算
+// 地板除
+% 取模
+** 幂
+记忆：斜杠是除，双斜杠向下取整
+3. 真假判断
+空容器、0、None、空串 → 全是 False
+记忆：空 = 假，非空 = 真
+4. 列表
+有序、可变、可重复
+增：append insert
+删：pop remove del
+记忆：列表万能，存啥都行
+5. 字典
+键唯一、查找快
+创建：{k:v} 或 dict(k=v)
+记忆：字典查得最快，键不能重复
+6. 推导式
+一行生成列表 / 字典
+记忆：要简洁，用推导式
+7. 集合
+去重、交并差
+记忆：集合天生去重
+8. lambda / zip / map
+简化代码
+记忆：简单函数用 lambda，打包用 zip，映射用 map
+"""
