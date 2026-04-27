@@ -29,7 +29,7 @@ print(
 for x in phone_book:
     print(x)  # 输出: Alice Charlie David
 # 也就是说当你仅输出一个x时，你得到的是字典中的键，而不是值或者键值对
-# 为了仅仅使用键就能得到每一个简直对，你需要这样做
+# 为了仅仅使用键就能得到每一个键值对，你需要这样做
 # 需要注意的是，这里使用key而不是x，这只是一个习惯用法，你也可以使用其他变量名来代替key
 for key in phone_book:
     print(
