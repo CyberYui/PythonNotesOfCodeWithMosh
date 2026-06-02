@@ -85,10 +85,10 @@ print(type(x))  # 输出变量 x 的类型
 print(10 + 3)  # 输出整数的加法结果
 print(10 - 3)  # 输出整数的减法结果
 print(10 * 3)  # 输出整数的乘法结果
-print(10 / 3)  # 输出整数的除法结果，结果是一个浮点数
-print(10 // 3)  # 输出整数的地板除结果，结果是一个整数
-print(10 % 3)  # 输出整数的模运算结果，结果是一个整数
-print(10**3)  # 输出整数的幂运算结果，结果是一个整数
+print(10 / 3)  # 输出整数的除法结果，结果是3.333333333333333
+print(10 // 3)  # 输出整数的地板除结果，结果是3
+print(10 % 3)  # 输出整数的模运算结果，结果是1
+print(10**3)  # 输出整数的幂运算结果，结果是1000
 
 x = 10
 x += 3  # 等价于 x = x + 3
@@ -114,16 +114,16 @@ print("math.sqrt(16):", math.sqrt(16))  # 输出 4.0
 
 print("*" * 10)
 # input() 函数用于从用户输入获取数据，返回一个字符串
-# name = input("What is your name? ")  # 提示用户输入名字
-# print(f"Hi {name}!")  # 输出问候语，使用 f-string 格式化字符串
-# print("*" * 10)
+name = input("What is your name? ")  # 提示用户输入名字
+print(f"Hi {name}!")  # 输出问候语，使用 f-string 格式化字符串
+print("*" * 10)
 
 # 练习：计算圆的面积
-# radius = input("请输入圆的半径: ")  # 获取用户输入的半径，返回一个字符串
-# radius = float(radius)  # 将字符串转换为浮点数
-# area = math.pi * radius ** 2  # 计算圆的面积，使用 math.pi 常量和幂运算符
-# print(f"圆的面积是: {area:.2f}")  # 输出圆的面积，保留两位小数
-# print("*" * 10)
+radius = input("请输入圆的半径: ")  # 获取用户输入的半径，返回一个字符串
+radius = float(radius)  # 将字符串转换为浮点数
+area = math.pi * radius**2  # 计算圆的面积，使用 math.pi 常量和幂运算符
+print(f"圆的面积是: {area:.2f}")  # 输出圆的面积，保留两位小数
+print("*" * 10)
 
 # Falsy 值：False, None, 0, 0.0, 0j, '', [], (), {}, set()
 # Truthy 值：除了 Falsy 值以外的所有值都是 Truthy 值
@@ -133,6 +133,9 @@ print("bool(0):", bool(0))  # 输出 False，因为 0 是 Falsy 值
 print("bool(0.0):", bool(0.0))  # 输出 False，因为 0.0 是 Falsy值
 print("bool(1):", bool(1))  # 输出 True，因为 1 是 Truthy 值
 print("bool([]):", bool([]))  # 输出 False，因为空列表是 Falsy 值
+print("bool(()):", bool(()))  # 输出 False，因为空元组是 Falsy 值
+print("bool({}):", bool({}))  # 输出 False，因为空字典是 Falsy 值
+print("bool(set()):", bool(set()))  # 输出 False，因为空集合是 Falsy 值
 print("bool([1, 2, 3]):", bool([1, 2, 3]))  # 输出 True，因为非空列表是 Truthy 值
 print("bool(None):", bool(None))  # 输出 False，因为 None 是 Falsy 值
 print("bool(False):", bool(False))  # 输出 False，因为 False 是 Falsy 值
