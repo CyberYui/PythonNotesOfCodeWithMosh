@@ -212,4 +212,6 @@ __marimo__/
 .LSOverride
 
 # personal files
-arkRightstest.py
+arkRightstest.py.claude/
+AGENTS.md
+CLAUDE.md
